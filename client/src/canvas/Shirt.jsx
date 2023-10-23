@@ -11,12 +11,11 @@ const Shirt = () => {
   const {nodes, materials} = useGLTF('/shirt_baked.glb')
   const logoTexture = useTexture(snap.logoDecal)
   const fullTexture = useTexture(snap.fullDecal)
-  console.log('logoDecal:', snap.logoDecal);
-console.log('fullDecal:', snap.fullDecal)
 
   useFrame((state,delta) => easing.dampC(materials.lambert1.color,snap.color, 0.25,delta))
 
   const stateString = JSON.stringify(snap)
+
   return (
     <group
     key={stateString}
